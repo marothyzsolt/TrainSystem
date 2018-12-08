@@ -6,6 +6,9 @@ import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
 import com.trainsystem.models.BaseModel;
 import com.trainsystem.models.User;
+import menusystem.MenuController;
+import menusystem.menus.MainMenu;
+import menusystem.menus.Test;
 import org.json.simple.parser.ParseException;
 
 import java.util.ArrayList;
@@ -14,9 +17,13 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-        DatabaseConnection.getInstance();
+        while(true) {
+            MenuController.create(new MainMenu()).execute();
+        }
 
-        Query q = new Query("users");
+        //DatabaseConnection.getInstance();
+
+       // Query q = new Query("users");
 
         /** Összetett feltételes lekérdezés OR **/
         //q.where(Filter.filter(Criteria.where("username").is("user")).or(Criteria.where("username").is("worker")));
@@ -33,8 +40,8 @@ public class Main {
         //User user = User.make(q.first());
 
         /**  Szimpla lekrédezés egy soros **/
-        User user = User.make(BaseModel.where("users", "username", "user")).get(0);
+        //User user = User.make(BaseModel.where("users", "username", "user")).get(0);
 
-        System.out.println(user);
+        //System.out.println(user);
     }
 }

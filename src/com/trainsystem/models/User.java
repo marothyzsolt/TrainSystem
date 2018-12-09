@@ -20,6 +20,7 @@ public class User extends BaseModel {
         id = dbJsonObject.getInt("id");
         username = dbJsonObject.getString("username");
         password = dbJsonObject.getString("password");
+        role = dbJsonObject.getString("role");
     }
 
     public User(String username, String password, String role)

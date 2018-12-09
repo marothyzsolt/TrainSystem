@@ -4,6 +4,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class DatabaseConnection {
     private static final String filePath = "src/com/trainsystem/db/db.json";
@@ -34,6 +35,16 @@ public class DatabaseConnection {
     public JSONObject getDatabase()
     {
         return database;
+    }
+
+    public void saveDatabase()
+    {
+        try (FileWriter file = new FileWriter(filePath)) {
+            file.write(database.toJSONString());
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
 

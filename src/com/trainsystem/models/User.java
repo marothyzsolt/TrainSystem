@@ -1,38 +1,49 @@
 package com.trainsystem.models;
 
+import com.trainsystem.db.DbJsonObject;
 import com.trainsystem.db.Query;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class User extends BaseModel {
 
-    private int id;
     private String username;
     private String password;
     private String role;
 
 
-    public User(JSONObject jsonObject) {
-        id = ((Long)jsonObject.get("id")).intValue();
-        username = (String) jsonObject.get("username");
-        password = (String) jsonObject.get("password");
-        role = (String) jsonObject.get("role");
+    public User(DbJsonObject dbJsonObject)
+    {
+        id = dbJsonObject.getInt("id");
+        username = dbJsonObject.getString("username");
+        password = dbJsonObject.getString("password");
     }
 
-    public static User make(JSONObject jsonObject) { return jsonObject==null?null:new User(jsonObject); }
+    public User(String username, String password, String role)
+    {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
+    public static User make(JSONObject jsonObject) { return jsonObject==null?null:new User(DbJsonObject.create(jsonObject)); }
+    public static ArrayList<User> make(Query query) { return make(query.all()); }
     public static ArrayList<User> make(JSONArray jsonArray)
     {
         ArrayList<User> users = new ArrayList<>();
-        jsonArray.forEach(item-> users.add(new User((JSONObject) item)));
+        jsonArray.forEach(item-> users.add(new User(new DbJsonObject((JSONObject) item))));
 
         return users;
     }
-    public static ArrayList<User> make(Query query)
-    {
-        return make(query.all());
-    }
+
+    @Override
+    protected Map<String, String> insert(int id) { return Map.of("id", String.valueOf(id), "username", username, "password", password, "role", role); }
+    @Override
+    protected Map<String, String> save() { return null; }
+    public void store() { store("users"); }
 
     @Override
     public String toString() {
@@ -42,10 +53,6 @@ public class User extends BaseModel {
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
                 '}';
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getUsername() {

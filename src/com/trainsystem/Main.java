@@ -1,7 +1,5 @@
 package com.trainsystem;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
@@ -23,9 +21,8 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-        //Route r = Route.make(Route.find("routes", 0).first());
-        //System.out.println(r);
-
+        Route r = Route.make(Route.find("routes", 1).first());
+        System.out.println(r);
 
 
         /*
@@ -60,7 +57,13 @@ public class Main {
 
         /**  Szimpla lekrédezés egy soros **/
         //User user = User.make(BaseModel.where("users", "username", "user")).get(0);
+        //User user2 = User.make(BaseModel.where("users", "username", "wapor")).get(0);
+
+        /** USER létrehozás */
+        //User user = new User("wapor", "asd123", "admin");
+        //user.store();
 
         //System.out.println(user);
+        //System.out.println(user2);
     }
 }

@@ -1,5 +1,6 @@
 package com.trainsystem.models;
 
+import com.trainsystem.db.DbJsonObject;
 import com.trainsystem.db.Query;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -8,24 +9,20 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
 
-public class Time {
-    private int id;
+public class Time extends BaseModel {
     private Date start;
     private Date arrive;
 
-    public Time(JSONObject jsonObject) {
-        id = ((Long)jsonObject.get("id")).intValue();
-
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm");
-
-        try {
-            start = formatter.parse((String) jsonObject.get("start"));
-            arrive = formatter.parse((String) jsonObject.get("arrive"));
-        } catch (ParseException ignore) {}
+    public Time(DbJsonObject jsonObject)
+    {
+        id = jsonObject.getInt("id");
+        start = jsonObject.getDate("start");
+        arrive = jsonObject.getDate("arrive");
     }
 
-    public static Time make(JSONObject jsonObject) { return jsonObject==null?null:new Time(jsonObject); }
+    public static Time make(JSONObject jsonObject) { return jsonObject==null?null:new Time(DbJsonObject.create(jsonObject)); }
     public static ArrayList<Time> make(Query query)
     {
         return make(query.all());
@@ -33,13 +30,9 @@ public class Time {
     public static ArrayList<Time> make(JSONArray jsonArray)
     {
         ArrayList<Time> objs = new ArrayList<>();
-        jsonArray.forEach(item-> objs.add(new Time((JSONObject) item)));
+        jsonArray.forEach(item-> objs.add(new Time(DbJsonObject.create(item))));
 
         return objs;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public Date getStart() {
@@ -69,5 +62,17 @@ public class Time {
                 ", start=" + getStartFormat() +
                 ", arrive=" + getArriveFormat() +
                 '}';
+    }
+
+
+
+    @Override
+    protected Map<String, String> insert(int id) {
+        return null;
+    }
+
+    @Override
+    protected Map<String, String> save() {
+        return null;
     }
 }

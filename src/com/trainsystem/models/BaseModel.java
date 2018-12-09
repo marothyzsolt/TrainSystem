@@ -1,20 +1,21 @@
 package com.trainsystem.models;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Map;
 
 
 abstract public class BaseModel {
+    protected int id;
     protected DatabaseConnection db;
 
 
@@ -44,17 +45,42 @@ abstract public class BaseModel {
         return new Query(jsonArray);
     }
 
-    protected void insert(String table, Map<String, String> datas)
+    @SuppressWarnings("unchecked")
+    protected JSONObject insertData(String table, Map<String, String> datas)
     {
-        DatabaseConnection db = DatabaseConnection.getInstance();
-        String json = db.getDatabase().toString();
-        Gson gson = new Gson();
-        JsonObject inputObj  = gson.fromJson(json, JsonObject.class);
-        JsonObject newObject = new JsonObject();
-        datas.forEach((key,value) ->  newObject.addProperty(key, value));
+        JSONArray arr = (JSONArray) DatabaseConnection.getInstance().getDatabase().get(table);
+        JSONObject jsonObject = new JSONObject();
 
-        inputObj.get(table).getAsJsonArray().add(newObject);
-        System.out.println(inputObj);
+        datas.forEach(jsonObject::put);
+        ((JSONArray) DatabaseConnection.getInstance().getDatabase().get(table)).add(jsonObject);
+        DatabaseConnection.getInstance().getDatabase().put(table, arr);
+
+        return DatabaseConnection.getInstance().getDatabase();
     }
 
+    abstract protected Map<String, String> insert(int id);
+    abstract protected Map<String, String> save();
+
+    public void store(String table)
+    {
+        if(this.id == 0)
+            insertData(table, insert(getNextId(table)));
+        else
+            save();
+
+        DatabaseConnection.getInstance().saveDatabase();
+    }
+
+    private int getNextId(String table)
+    {
+        int maxid = 0;
+        for (Object jsonObject : (JSONArray) DatabaseConnection.getInstance().getDatabase().get(table))
+            if (jsonObject != null && (id = Integer.parseInt(String.valueOf(((JSONObject) jsonObject).get("id")))) > maxid)
+                maxid = id;
+        return ++maxid;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

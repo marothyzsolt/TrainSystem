@@ -12,8 +12,6 @@ public class MainMenu extends MenuBase {
         {
             case 1:
                 LoginController loginController = LoginController.loginUser();
-                if(loginController != null)
-
                 break;
             case 2:
                 System.exit(0);

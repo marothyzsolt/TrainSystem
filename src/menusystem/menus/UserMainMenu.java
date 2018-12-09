@@ -10,7 +10,7 @@ public class UserMainMenu extends MenuBase {
         switch (option)
         {
             case 1:
-
+                LoginController.logout();
                 break;
             case 2:
                 System.exit(0);

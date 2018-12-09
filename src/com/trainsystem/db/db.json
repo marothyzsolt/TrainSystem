@@ -1,19 +1,19 @@
 {
   "users": [
     {
+      "id": 0,
       "username": "user",
       "password": "testpass",
-      "id": 0,
       "role": "user"
     }, {
+      "id": 1,
       "username": "worker",
       "password": "workerpass",
-      "id": 1,
       "role": "worker"
     }, {
+      "id": 2,
       "username": "admin",
       "password": "adminpass",
-      "id": 2,
       "role": "admin"
     }
   ],
@@ -22,51 +22,55 @@
       "id": 0,
       "from": "Budapest",
       "to": "Szolnok",
+      "distance": 230,
       "times": [
         {
           "id": 0,
-          "start": "2018.10.21. 11:20",
-          "arrive": "2018.10.21. 13:25"
+          "start": "2018-10-21 11:20",
+          "arrive": "2018-10-21 13:25"
         },
         {
           "id": 1,
-          "start": "2018.10.21. 13:20",
-          "arrive": "2018.10.21. 15:25"
+          "start": "2018-10-21 13:20",
+          "arrive": "2018-10-21 15:25"
         }
       ]
     }, {
       "id": 1,
       "from": "Veszprem",
       "to": "Budapest",
+      "distance": 160,
       "times": [
         {
           "id": 0,
-          "start": "2018.10.30. 09:35",
-          "arrive": "2018.10.30. 11:02"
+          "start": "2018-10-30 09:35",
+          "arrive": "2018-10-30 11:02"
         }
       ]
     }, {
       "id": 2,
       "from": "Veszprem",
       "to": "Gyor",
+      "distance": 180,
       "times": [
         {
           "id": 0,
-          "start": "2018.11.10. 15:46",
-          "arrive": "2018.11.10. 16:50"
+          "start": "2018-11-10 15:46",
+          "arrive": "2018-11-10 16:50"
         }
-      ],
+      ]
     }, {
-      "id": 1,
+      "id": 3,
       "from": "Gyor",
       "to": "Szombathely",
+      "distance": 100,
       "times": [
         {
           "id": 0,
-          "start": "2018.11.05. 13:10",
-          "arrive": "2018.11.05. 14:50"
+          "start": "2018-11-05 13:10",
+          "arrive": "2018-11-05 14:50"
         }
-      ],
+      ]
     }
   ]
 }

@@ -30,4 +30,8 @@ public class LoginView {
     {
         System.out.println("Sikeres bejelentkezés, "+model.getUsername()+"!");
     }
+
+    public void logoutSuccess() {
+        System.out.println("Sikeres kijelentkezés, "+model.getUsername()+"!");
+    }
 }

@@ -34,4 +34,11 @@ public class LoginController {
 
         return null;
     }
+
+    public static void logout() {
+        LoginView loginView = new LoginView(StorageService.getInstance().user());
+        loginView.logoutSuccess();
+
+        StorageService.getInstance().setCurrentUser(null);
+    }
 }

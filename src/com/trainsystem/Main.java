@@ -5,6 +5,7 @@ import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
 import com.trainsystem.models.BaseModel;
+import com.trainsystem.models.Route;
 import com.trainsystem.models.User;
 import com.trainsystem.services.StorageService;
 import menusystem.MenuController;
@@ -17,6 +18,10 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
+        Route r = Route.make(Route.find("routes", 0).first());
+        System.out.println(r);
+
+        /*
         while(true) {
             if(StorageService.getInstance().user() == null)
                 MenuController.create(new MainMenu()).execute();

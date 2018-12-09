@@ -1,14 +1,10 @@
 package com.trainsystem.controllers;
 
-import com.jayway.jsonpath.Criteria;
-import com.jayway.jsonpath.Filter;
-import com.trainsystem.helpers.Pair;
 import com.trainsystem.models.User;
-import com.trainsystem.services.StorageService;
 import com.trainsystem.views.AdminView;
-import com.trainsystem.views.LoginView;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class UserController {
 
@@ -30,4 +26,18 @@ public class UserController {
     }
 
 
+    public static void deleteUser() {
+        int deleteId = AdminView.showUsersDelete(User.all());
+        User user = User.make(User.find("users", deleteId).first());
+        if(Objects.isNull(user))
+            AdminView.deleteUserFailed();
+        else {
+            user.delete();
+            AdminView.deleteUserSuccess();
+        }
+    }
+
+    public static void showUsers() {
+        AdminView.showUsers(User.all());
+    }
 }

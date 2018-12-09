@@ -1,5 +1,6 @@
 package com.trainsystem.db;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -35,6 +36,11 @@ public class DatabaseConnection {
     public JSONObject getDatabase()
     {
         return database;
+    }
+
+    public JSONArray getTable(String table)
+    {
+        return (JSONArray) database.get(table);
     }
 
     public void saveDatabase()

@@ -4,13 +4,12 @@ import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
+import com.trainsystem.helpers.JsonHelper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Map;
 
 
@@ -44,6 +43,8 @@ abstract public class BaseModel {
 
         return new Query(jsonArray);
     }
+
+    public static Query all(String table) { return new Query(table); }
 
     @SuppressWarnings("unchecked")
     protected JSONObject insertData(String table, Map<String, String> datas)
@@ -83,4 +84,18 @@ abstract public class BaseModel {
     public int getId() {
         return id;
     }
+
+    @SuppressWarnings("unchecked")
+    public void delete(String table, int id)
+    {
+        DatabaseConnection.getInstance().getDatabase().replace(
+                table,
+                DatabaseConnection.getInstance().getTable(table),
+                JsonHelper.removeByKey("id", id, DatabaseConnection.getInstance().getTable(table))
+        );
+
+        DatabaseConnection.getInstance().saveDatabase();
+    }
+
+
 }

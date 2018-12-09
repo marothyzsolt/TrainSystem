@@ -1,9 +1,9 @@
 package com.trainsystem.views;
 
-import com.trainsystem.helpers.Pair;
 import com.trainsystem.models.User;
 import menusystem.MenuHelper;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class AdminView {
@@ -33,4 +33,17 @@ public class AdminView {
         System.out.println("Sikeres felhasználó létrehozás!");
     }
 
+    public static void showUsers(ArrayList<User> all) {
+        all.forEach(UserView::showUser);
+    }
+    public static int showUsersDelete(ArrayList<User> all) {
+        showUsers(all);
+        return MenuHelper.readInt("Törölni kívánt ID: ");
+    }
+
+    public static void deleteUserSuccess()
+    {
+        System.out.println("Sikeres felhasználó törlés!");
+    }
+    public static void deleteUserFailed() { System.out.println("Ismeretlen felhasználó azonosító!"); }
 }

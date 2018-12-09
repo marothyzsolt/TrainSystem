@@ -39,6 +39,7 @@ public class User extends BaseModel {
 
         return users;
     }
+    public static ArrayList<User> all() { return make(User.all("users").get()); }
 
     @Override
     protected Map<String, String> insert(int id) { return Map.of("id", String.valueOf(id), "username", username, "password", password, "role", role); }
@@ -62,6 +63,12 @@ public class User extends BaseModel {
 
     public String getRole() {
         return role.toLowerCase();
+    }
+
+    public void delete()
+    {
+        if(id > 0)
+            delete("users", id);
     }
 
     public boolean isUser() { return getRole().equals("user"); }

@@ -24,6 +24,10 @@ public class Main {
         //Route r = Route.make(Route.find("routes", 1).first());
         //System.out.println(r);
 
+        ///User u = User.make(User.find("users", 4).first());
+       // u.delete("users", 4);
+      //  System.out.println(u);
+
 
 
         while(true) {
@@ -62,6 +66,9 @@ public class Main {
         /** USER létrehozás */
         //User user = new User("wapor", "asd123", "admin");
         //user.store();
+
+        /** USER TÖRLÉS */ // 4-es az id (nem a sorszám, hanem az id a users táblában a json fájlban!!!!
+        //BaseModel.delete("users", 4);
 
         //System.out.println(user);
         //System.out.println(user2);

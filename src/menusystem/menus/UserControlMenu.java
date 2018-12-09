@@ -11,12 +11,15 @@ public class UserControlMenu extends MenuBase {
         switch (option)
         {
             case 1:
-                UserController.createUser();
+                UserController.showUsers();
                 break;
             case 2:
-
+                UserController.createUser();
                 break;
             case 3:
+                UserController.deleteUser();
+                break;
+            case 4:
 
                 break;
 
@@ -25,7 +28,7 @@ public class UserControlMenu extends MenuBase {
 
     @Override
     public String[] getOptions() {
-        return new String[]{"Felhasználó hozzáadása", "Vissza"};
+        return new String[]{"Felhasználók listázása", "Felhasználó hozzáadása", "Felhasználó törlése", "Vissza"};
     }
 
 

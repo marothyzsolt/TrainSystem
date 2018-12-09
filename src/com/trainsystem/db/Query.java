@@ -6,7 +6,6 @@ import com.jayway.jsonpath.JsonPath;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONArray;

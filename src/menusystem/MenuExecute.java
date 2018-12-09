@@ -13,7 +13,7 @@ public class MenuExecute {
     }
 
     public Integer execute() {
-        System.out.println(" - Válasszon menüpontot - ");
+        System.out.println("\n - Válasszon menüpontot - ");
         for(int i = 0; i < options.size(); i++)
         {
             System.out.println(i+1 + " - " + options.get(i));

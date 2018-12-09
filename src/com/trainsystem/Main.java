@@ -21,11 +21,11 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-        Route r = Route.make(Route.find("routes", 1).first());
-        System.out.println(r);
+        //Route r = Route.make(Route.find("routes", 1).first());
+        //System.out.println(r);
 
 
-        /*
+
         while(true) {
             if(StorageService.getInstance().user() == null)
                 MenuController.create(new MainMenu()).execute();

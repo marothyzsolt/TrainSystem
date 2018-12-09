@@ -1,6 +1,8 @@
 package menusystem.menus;
 
 import com.trainsystem.controllers.LoginController;
+import com.trainsystem.models.SystemInfo;
+import com.trainsystem.views.SystemView;
 import menusystem.MenuBase;
 import menusystem.MenuController;
 
@@ -11,12 +13,16 @@ public class AdminMainMenu extends MenuBase {
         switch (option)
         {
             case 1:
-                MenuController.create(new UserControlMenu()).execute();
+                SystemView.showKmPrice(SystemInfo.getInstance());
+                MenuController.create(new SystemInfoMenu()).execute();
                 break;
             case 2:
-                LoginController.logout();
+                MenuController.create(new UserControlMenu()).execute();
                 break;
             case 3:
+                LoginController.logout();
+                break;
+            case 4:
                 System.exit(0);
                 break;
 
@@ -25,7 +31,7 @@ public class AdminMainMenu extends MenuBase {
 
     @Override
     public String[] getOptions() {
-        return new String[]{"Felhasználók kezelése", "Kijelentkezés", "Kilépés"};
+        return new String[]{"Jegyárak módosítása", "Felhasználók kezelése", "Kijelentkezés", "Kilépés"};
     }
 
 

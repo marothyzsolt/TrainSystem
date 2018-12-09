@@ -49,12 +49,19 @@ abstract public class BaseModel {
     @SuppressWarnings("unchecked")
     protected JSONObject insertData(String table, Map<String, String> datas)
     {
-        JSONArray arr = (JSONArray) DatabaseConnection.getInstance().getDatabase().get(table);
-        JSONObject jsonObject = new JSONObject();
+        if(DatabaseConnection.getInstance().getDatabase().get(table) instanceof JSONArray) {
+            JSONArray arr = (JSONArray) DatabaseConnection.getInstance().getDatabase().get(table);
+            JSONObject jsonObject = new JSONObject();
 
-        datas.forEach(jsonObject::put);
-        ((JSONArray) DatabaseConnection.getInstance().getDatabase().get(table)).add(jsonObject);
-        DatabaseConnection.getInstance().getDatabase().put(table, arr);
+            datas.forEach(jsonObject::put);
+            ((JSONArray) DatabaseConnection.getInstance().getDatabase().get(table)).add(jsonObject);
+            DatabaseConnection.getInstance().getDatabase().put(table, arr);
+        } else if(DatabaseConnection.getInstance().getDatabase().get(table) instanceof JSONObject)
+        {
+            JSONObject jsonObject = new JSONObject();
+            datas.forEach(jsonObject::put);
+            ((JSONObject)DatabaseConnection.getInstance().getDatabase().get(table)).putAll(datas);
+        }
 
         return DatabaseConnection.getInstance().getDatabase();
     }
@@ -70,6 +77,11 @@ abstract public class BaseModel {
             save();
 
         DatabaseConnection.getInstance().saveDatabase();
+    }
+
+    protected void storeSingleObject(String table, Map<String, String> datas)
+    {
+        insertData(table, datas);
     }
 
     private int getNextId(String table)

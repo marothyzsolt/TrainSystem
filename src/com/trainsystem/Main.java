@@ -6,6 +6,7 @@ import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
 import com.trainsystem.models.BaseModel;
 import com.trainsystem.models.Route;
+import com.trainsystem.models.SystemInfo;
 import com.trainsystem.models.User;
 import com.trainsystem.services.StorageService;
 import menusystem.MenuController;
@@ -27,6 +28,11 @@ public class Main {
         ///User u = User.make(User.find("users", 4).first());
        // u.delete("users", 4);
       //  System.out.println(u);
+
+        //SystemInfo systemInfo = SystemInfo.getInstance();
+        //systemInfo.setKmPrice(10);
+        //systemInfo.store();
+        //System.out.println(o);
 
 
 

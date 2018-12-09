@@ -40,6 +40,12 @@ public class DatabaseConnection {
 
     public JSONArray getTable(String table)
     {
+        if(database.get(table) instanceof JSONObject)
+        {
+            JSONArray ja = new JSONArray();
+            ja.add(database.get(table));
+            return ja;
+        }
         return (JSONArray) database.get(table);
     }
 

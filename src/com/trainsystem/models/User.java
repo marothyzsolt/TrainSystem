@@ -43,4 +43,20 @@ public class User extends BaseModel {
                 ", role='" + role + '\'' +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getRole() {
+        return role.toLowerCase();
+    }
+
+    public boolean isUser() { return getRole().equals("user"); }
+    public boolean isWorker() { return getRole().equals("worker"); }
+    public boolean isAdmin() { return getRole().equals("admin"); }
 }

@@ -1,18 +1,14 @@
 package menusystem.menus;
 
-import com.trainsystem.controllers.LoginController;
 import menusystem.MenuBase;
-import menusystem.MenuController;
 
-public class MainMenu extends MenuBase {
+public class WorkerMainMenu extends MenuBase {
 
     @Override
     protected void handle(Integer option) {
         switch (option)
         {
             case 1:
-                LoginController loginController = LoginController.loginUser();
-                if(loginController != null)
 
                 break;
             case 2:
@@ -24,7 +20,7 @@ public class MainMenu extends MenuBase {
 
     @Override
     public String[] getOptions() {
-        return new String[]{"Bejelentkezés", "Kilépés"};
+        return new String[]{"Kijelentkezés", "Kilépés"};
     }
 
 

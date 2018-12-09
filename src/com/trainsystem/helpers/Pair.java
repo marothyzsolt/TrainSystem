@@ -11,7 +11,9 @@ public class Pair<L,R> {
     }
 
     public L getLeft() { return left; }
+    public L getKey() { return left; }
     public R getRight() { return right; }
+    public R getValue() { return right; }
 
     @Override
     public int hashCode() { return left.hashCode() ^ right.hashCode(); }

@@ -6,9 +6,9 @@ import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
 import com.trainsystem.models.BaseModel;
 import com.trainsystem.models.User;
+import com.trainsystem.services.StorageService;
 import menusystem.MenuController;
-import menusystem.menus.MainMenu;
-import menusystem.menus.Test;
+import menusystem.menus.*;
 import org.json.simple.parser.ParseException;
 
 import java.util.ArrayList;
@@ -18,7 +18,14 @@ public class Main {
     public static void main(String[] args) throws ParseException {
 
         while(true) {
-            MenuController.create(new MainMenu()).execute();
+            if(StorageService.getInstance().user() == null)
+                MenuController.create(new MainMenu()).execute();
+            else if(StorageService.getInstance().user().isUser()) // USER
+                MenuController.create(new UserMainMenu()).execute();
+            else if(StorageService.getInstance().user().isWorker()) // WORKER
+                MenuController.create(new WorkerMainMenu()).execute();
+            else if(StorageService.getInstance().user().isAdmin()) // ADMIN
+                MenuController.create(new AdminMainMenu()).execute();
         }
 
         //DatabaseConnection.getInstance();

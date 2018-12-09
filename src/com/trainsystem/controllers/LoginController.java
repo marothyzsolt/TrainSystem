@@ -4,6 +4,7 @@ import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.helpers.Pair;
 import com.trainsystem.models.User;
+import com.trainsystem.services.StorageService;
 import com.trainsystem.views.LoginView;
 
 public class LoginController {
@@ -15,16 +16,22 @@ public class LoginController {
         this.view = view;
     }
 
-    public static void loginUser()
+    public static LoginController loginUser()
     {
         Pair<String, String> pair = LoginView.login();
         String username = pair.getLeft();
         String password = pair.getRight();
 
-        System.out.println(username);
-        System.out.println(password);
-
         User user = User.make(User.where("users", Filter.filter(Criteria.where("username").is(username).and("password").is(password))).first());
-        System.out.println(user);
+        if(user != null) {
+            LoginController loginController = new LoginController(user, new LoginView(user));
+            StorageService.getInstance().setCurrentUser(user);
+            loginController.view.loginSuccess();
+            return loginController;
+        }
+        else
+            LoginView.loginError();
+
+        return null;
     }
 }

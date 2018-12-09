@@ -1,5 +1,7 @@
 package com.trainsystem;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
@@ -10,16 +12,21 @@ import com.trainsystem.models.User;
 import com.trainsystem.services.StorageService;
 import menusystem.MenuController;
 import menusystem.menus.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-        Route r = Route.make(Route.find("routes", 0).first());
-        System.out.println(r);
+        //Route r = Route.make(Route.find("routes", 0).first());
+        //System.out.println(r);
+
+
 
         /*
         while(true) {

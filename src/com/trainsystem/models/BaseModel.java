@@ -1,5 +1,6 @@
 package com.trainsystem.models;
 
+import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
@@ -95,9 +96,10 @@ abstract public class BaseModel {
     @SuppressWarnings("unchecked")
     protected JSONObject insertData(String table, Map<String, String> datas)
     {
-
+        System.out.println("insertData");
         //if(table.split(".").length)
-        /*if(DatabaseConnection.getInstance().getDatabase().get(table) instanceof JSONArray) {
+        if(DatabaseConnection.getInstance().getDatabase().get(table) instanceof JSONArray) {
+            System.out.println("insertData__Array");
             JSONArray arr = (JSONArray) DatabaseConnection.getInstance().getDatabase().get(table);
             JSONObject jsonObject = new JSONObject();
 
@@ -106,13 +108,13 @@ abstract public class BaseModel {
             DatabaseConnection.getInstance().getDatabase().put(table, arr);
         } else if(DatabaseConnection.getInstance().getDatabase().get(table) instanceof JSONObject)
         {
+            System.out.println("insertData__Object");
             JSONObject jsonObject = new JSONObject();
             datas.forEach(jsonObject::put);
             ((JSONObject)DatabaseConnection.getInstance().getDatabase().get(table)).putAll(datas);
         }
 
-        return DatabaseConnection.getInstance().getDatabase();*/
-        return null;
+        return DatabaseConnection.getInstance().getDatabase();
     }
 
     abstract protected Map<String, String> insert(int id);

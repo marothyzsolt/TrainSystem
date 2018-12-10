@@ -40,6 +40,7 @@ public class Costumer extends User {
 
     public void addCreditCard( CreditCard cardNumber) {
         creditCards.add( cardNumber);
+        store("users");
     }
 
     public void removeCreditCard( Long cardNumber) {
@@ -67,6 +68,6 @@ public class Costumer extends User {
     }
 
     public void store() {
-        store("users");
+
     }
 }

@@ -38,6 +38,8 @@ public class Main {
         //RouteController.createTimeTable();
 
 
+        //RouteController.createTimeTable();
+        
 
         while(true) {
             if(StorageService.getInstance().user() == null)

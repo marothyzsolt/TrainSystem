@@ -3,9 +3,11 @@ package com.trainsystem.controllers;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.helpers.Pair;
+import com.trainsystem.models.Costumer;
 import com.trainsystem.models.User;
 import com.trainsystem.services.StorageService;
 import com.trainsystem.views.LoginView;
+import org.json.simple.JSONObject;
 
 public class LoginController {
     protected final User model;
@@ -22,10 +24,15 @@ public class LoginController {
         String username = pair.getLeft();
         String password = pair.getRight();
 
-        User user = User.make(User.where("users", Filter.filter(Criteria.where("username").is(username).and("password").is(password))).first());
-        if(user != null) {
-            LoginController loginController = new LoginController(user, new LoginView(user));
+        JSONObject userObject = User.where("users",Filter.filter(Criteria.where("username").is(username).and("password").is(password))).first();
+        if(userObject != null) {
+            if ( userObject.get("role").equals("user")) {
+                Costumer costumer = new Costumer(userObject);
+                StorageService.getInstance().setCurrentCostumer(costumer);
+            }
+            User user = User.make(userObject);
             StorageService.getInstance().setCurrentUser(user);
+            LoginController loginController = new LoginController(user, new LoginView(user));
             loginController.view.loginSuccess();
             return loginController;
         }

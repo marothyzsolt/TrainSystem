@@ -65,7 +65,7 @@ public class DbJsonObject {
 
     public Date getDate(String key)
     {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
         try {
             return formatter.parse((String) jsonObject.get(key));
@@ -80,7 +80,9 @@ public class DbJsonObject {
 
     public static DbJsonObject create(Object jsonObject)
     {
-        return new DbJsonObject((JSONObject) jsonObject);
+        if(jsonObject instanceof JSONObject)
+            return new DbJsonObject((JSONObject) jsonObject);
+        return new DbJsonObject(new JSONObject());
     }
 
     @Override

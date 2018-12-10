@@ -33,10 +33,10 @@ public class Main {
         //SystemInfo systemInfo = SystemInfo.getInstance();
         //systemInfo.setKmPrice(10);
         //systemInfo.store();
-        //System.out.println(o);
+        //System.out.println(o);//
 
-        RouteController.createTimeTable();
-        /*
+        //RouteController.createTimeTable();
+
 
 
         while(true) {

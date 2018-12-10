@@ -55,13 +55,12 @@ public class RouteController {
 
     public static void createTimeTable() {
         listRoutes();
-        //RouteController routeController = selectRoute();
-        RouteController routeController = new RouteController(Route.make(Route.find("routes", 3).first()), new RouteView(null));
-        if(routeController.model != null) {
-            //Map<String, String> timeTableData = routeController.view.createTimeTable();
-            //Time time = new Time(timeTableData.get("start"), timeTableData.get("arrive"));
-            Time time = new Time("2018-01-01 00:00", "2018-01-01 01:00");
-            System.out.println(time);
+        RouteController routeController = selectRoute();
+        if(routeController != null && routeController.model != null) {
+            Map<String, String> timeTableData = routeController.view.createTimeTable();
+            Time time = new Time(timeTableData.get("start"), timeTableData.get("arrive"));
+            //Time time = new Time("2018-01-01 00:00", "2018-01-01 01:00");
+            //System.out.println(time);
 
             routeController.model.addTime(time);
 

@@ -55,13 +55,25 @@ public class Time extends BaseModel {
 
     public String getStartFormat()
     {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.' 'MM.' 'dd. ' 'HH:mm");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy. MM. dd. HH:mm");
         return formatter.format(start);
     }
 
     public String getArriveFormat()
     {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.' 'MM.' 'dd. ' 'HH:mm");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy. MM. dd. HH:mm");
+        return formatter.format(arrive);
+    }
+
+    public String getStartBaseFormat()
+    {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        return formatter.format(start);
+    }
+
+    public String getArriveBaseFormat()
+    {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return formatter.format(arrive);
     }
 

@@ -3,6 +3,7 @@ package com.trainsystem.models;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
+import com.trainsystem.db.DbJsonArray;
 import com.trainsystem.db.DbJsonObject;
 import com.trainsystem.db.Query;
 import org.json.simple.JSONArray;
@@ -104,29 +105,10 @@ public class Route extends BaseModel {
         if(time.getArrive() == null || time.getStart() == null)
             return;
 
-        this.id = 3;
+        DbJsonArray x = findData("routes["+id+"].times", DatabaseConnection.getInstance().getDatabase());
 
-        /*JSONArray jsonArray = (JSONArray) DatabaseConnection.getInstance().getDatabase().get("routes");
-        for (Object jsonObject : jsonArray) {
-            JSONObject obj = (JSONObject) jsonObject;
-            int currentId = DbJsonObject.create(obj).getInt("id");
-            if(currentId == this.id)
-            {
-                //System.out.println(obj);
-                JSONArray x = (JSONArray) obj.get("times");
-                JSONObject xo = new JSONObject();
-                xo.put("s", 1);
-                xo.put("a", 2);
-                x.add(xo);
-                System.out.println(x);
-                break;
-            }
-        }
-        //insertData("routes")
-        System.out.println(jsonArray);
-        System.out.println(DatabaseConnection.getInstance().getTable("routes"));
-        DatabaseConnection.getInstance().saveDatabase();*/
-        insertData("routes[3].times", Map.of("start", "startVal", "arrival", "arrivalVal"), DatabaseConnection.getInstance().getDatabase());
+        insertData(Map.of("id", String.valueOf(getNextId(x.get())),"start", time.getStartBaseFormat(), "arrive", time.getArriveBaseFormat()), x);
+
         DatabaseConnection.getInstance().saveDatabase();
     }
 }

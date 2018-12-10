@@ -32,8 +32,10 @@ public class User extends BaseModel {
         this.role = role;
     }
 
+
     public static User make(JSONObject jsonObject) { return jsonObject==null?null:new User(DbJsonObject.create(jsonObject)); }
     public static ArrayList<User> make(Query query) { return make(query.all()); }
+
     public static ArrayList<User> make(JSONArray jsonArray)
     {
         ArrayList<User> users = new ArrayList<>();
@@ -64,6 +66,21 @@ public class User extends BaseModel {
                 '}';
     }
 
+
+    @Override
+    protected Map<String, String> insert(int id) {
+        return Map.of("id", String.valueOf(id), "username", username, "password", password, "role", role);
+    }
+
+    @Override
+    protected Map<String, String> save() {
+        return null;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -81,4 +98,5 @@ public class User extends BaseModel {
     public boolean isUser() { return getRole().equals("user"); }
     public boolean isWorker() { return getRole().equals("worker"); }
     public boolean isAdmin() { return getRole().equals("admin"); }
+
 }

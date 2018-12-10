@@ -35,9 +35,9 @@ public class Main {
         //systemInfo.store();
         //System.out.println(o);
 
-        RouteController.createTimeTable();
-        /*
 
+        //RouteController.createTimeTable();
+        
 
         while(true) {
             if(StorageService.getInstance().user() == null)

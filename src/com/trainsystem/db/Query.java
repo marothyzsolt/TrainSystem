@@ -6,7 +6,6 @@ import com.jayway.jsonpath.JsonPath;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONArray;
@@ -33,9 +32,8 @@ public class Query {
         database = jsonArray;
     }
 
-    public JSONArray get()
+    private String generateTableStructure()
     {
-
         String tableStructure = "$.";
         if(tables.size() > 0)
             tableStructure += StringUtils.join(this.tables, '.');
@@ -45,12 +43,17 @@ public class Query {
         if(tables.size() == 0)
             tableStructure += "[*]";
 
+        return tableStructure;
+    }
+
+    public JSONArray get()
+    {
         if (this.filter == null)
-            return JsonPath.read((database==null?DatabaseConnection.getInstance().getDatabase():database), tableStructure);
+            return JsonPath.read((database==null?DatabaseConnection.getInstance().getDatabase():database), generateTableStructure());
         else
         {
             try {
-                String x = JsonPath.parse((database==null?DatabaseConnection.getInstance().getDatabase():database)).read(tableStructure, this.filter).toString();
+                String x = JsonPath.parse((database==null?DatabaseConnection.getInstance().getDatabase():database)).read(generateTableStructure(), this.filter).toString();
                 database = (JSONArray)new JSONParser().parse(x);
                 return database;
             } catch (ParseException e) {
@@ -58,6 +61,11 @@ public class Query {
             }
         }
         return null;
+    }
+
+    public JSONObject getObject()
+    {
+        return JsonPath.read((database==null?DatabaseConnection.getInstance().getDatabase():database), generateTableStructure());
     }
 
     public Query where(Criteria criteria)

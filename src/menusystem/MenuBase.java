@@ -5,7 +5,6 @@ import java.util.Map;
 
 abstract public class MenuBase {
     protected Map<Integer, String> options = new HashMap<>();
-    protected MenuHelper helper = new MenuHelper();
 
     public void addOption(Integer index, String option)
     {

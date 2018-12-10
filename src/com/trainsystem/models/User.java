@@ -21,7 +21,7 @@ public class User extends BaseModel {
         role = (String) jsonObject.get("role");
     }
 
-    public static User make(JSONObject jsonObject) { return jsonObject==null?null:new User(jsonObject); }
+    public static User make(JSONObject jsonObject) { return jsonObject == null ? null : new User(jsonObject); }
     public static ArrayList<User> make(JSONArray jsonArray)
     {
         ArrayList<User> users = new ArrayList<>();

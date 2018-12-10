@@ -28,7 +28,7 @@ public class Main {
 
 
 
-        /*
+
         while(true) {
             if(StorageService.getInstance().user() == null)
                 MenuController.create(new MainMenu()).execute();

@@ -22,6 +22,16 @@ public class Time extends BaseModel {
         arrive = jsonObject.getDate("arrive");
     }
 
+    public Time(String start, String arrive)
+    {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm");
+
+        try {
+            this.start = formatter.parse(start);
+            this.arrive = formatter.parse(arrive);
+        } catch (ParseException ignored) { }
+    }
+
     public static Time make(JSONObject jsonObject) { return jsonObject==null?null:new Time(DbJsonObject.create(jsonObject)); }
     public static ArrayList<Time> make(Query query)
     {

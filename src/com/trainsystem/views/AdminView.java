@@ -11,12 +11,12 @@ public class AdminView {
 
     public static Map<String, String> createUser()
     {
-        String username = MenuHelper.readLine("Felhasználónév: ");
-        String password = MenuHelper.readLine("Jelszó: ");
+        String username = MenuHelper.getInstance().readLine("Felhasználónév: ");
+        String password = MenuHelper.getInstance().readLine("Jelszó: ");
 
         int role;
         do {
-            role = MenuHelper.readInt("Szerepkör [1: customer; 2: worker; 3: admin]: ");
+            role = MenuHelper.getInstance().readInt("Szerepkör [1: customer; 2: worker; 3: admin]: ");
         } while (role < 1 || role > 3);
 
         return Map.of(
@@ -28,17 +28,12 @@ public class AdminView {
     }
 
 
-    public static void createUserSuccess()
-    {
-        System.out.println("Sikeres felhasználó létrehozás!");
-    }
+    public static void createUserSuccess() { System.out.println("Sikeres felhasználó létrehozás!"); }
+    public static void createUserFailed() { System.out.println("Sikertelen felhasználó létrehozás! Ezzel a felhasználónévvel már létezik felhasználó!"); }
 
-    public static void showUsers(ArrayList<User> all) {
-        all.forEach(UserView::showUser);
-    }
     public static int showUsersDelete(ArrayList<User> all) {
-        showUsers(all);
-        return MenuHelper.readInt("Törölni kívánt ID: ");
+        UserView.showUsers(all);
+        return MenuHelper.getInstance().readInt("Törölni kívánt ID: ");
     }
 
     public static void deleteUserSuccess()

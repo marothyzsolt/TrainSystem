@@ -3,8 +3,10 @@ package com.trainsystem.models;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DatabaseConnection;
+import com.trainsystem.db.DbJsonObject;
 import com.trainsystem.db.Query;
 import com.trainsystem.helpers.JsonHelper;
+import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -46,10 +48,56 @@ abstract public class BaseModel {
 
     public static Query all(String table) { return new Query(table); }
 
+    protected JSONObject insertData(String table, Map<String, String> datas, JSONObject db)
+    {
+        System.out.println(table);
+        String[] split = table.split("[.]");
+        if(split.length == 1)
+        {
+            JSONArray x = (JSONArray) db.get(split[0]);
+            JSONObject xo = new JSONObject();
+            datas.forEach(xo::put);
+            x.add(xo);
+        } else {
+            String s = split[0];
+            split[0] = "";
+            String onlyTableName = StringUtils.join(split, '.');
+            if (onlyTableName.length() > 1)
+                onlyTableName = onlyTableName.substring(1);
+            if (s.contains("[") && s.contains("]")) {
+                int getId = Integer.parseInt(s.replaceAll("\\D+", ""));
+                String getDb = s.replaceAll("[^A-Za-z]+", "");
+                JSONArray currDb = (JSONArray) db.get(getDb);
+
+                int i = 0;
+                for (Object jsonObject : currDb) {
+                    JSONObject obj = (JSONObject) jsonObject;
+                    int currentId = DbJsonObject.create(obj).getInt("id");
+                    if (currentId == getId) {
+                        insertData(onlyTableName, datas, (JSONObject) currDb.get(i));
+                        break;
+                    }
+                    i++;
+                }
+            } else {
+                Object currDb = db.get(s);
+
+                if (currDb instanceof JSONObject) {
+                    if (split.length > 1)
+                        insertData(onlyTableName, datas, (JSONObject) currDb);
+                }
+
+            }
+        }
+        return null;
+    }
+
     @SuppressWarnings("unchecked")
     protected JSONObject insertData(String table, Map<String, String> datas)
     {
-        if(DatabaseConnection.getInstance().getDatabase().get(table) instanceof JSONArray) {
+
+        //if(table.split(".").length)
+        /*if(DatabaseConnection.getInstance().getDatabase().get(table) instanceof JSONArray) {
             JSONArray arr = (JSONArray) DatabaseConnection.getInstance().getDatabase().get(table);
             JSONObject jsonObject = new JSONObject();
 
@@ -63,7 +111,8 @@ abstract public class BaseModel {
             ((JSONObject)DatabaseConnection.getInstance().getDatabase().get(table)).putAll(datas);
         }
 
-        return DatabaseConnection.getInstance().getDatabase();
+        return DatabaseConnection.getInstance().getDatabase();*/
+        return null;
     }
 
     abstract protected Map<String, String> insert(int id);

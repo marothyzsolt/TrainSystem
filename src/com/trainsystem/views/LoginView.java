@@ -13,8 +13,8 @@ public class LoginView {
 
     public static Pair<String, String> login()
     {
-        String username = MenuHelper.readLine("Felhasználónév: ");
-        String password = MenuHelper.readLine("Jelszó: ");
+        String username = MenuHelper.getInstance().readLine("Felhasználónév: ");
+        String password = MenuHelper.getInstance().readLine("Jelszó: ");
 
         Pair<String, String> pair = new Pair<>(username, password);
 

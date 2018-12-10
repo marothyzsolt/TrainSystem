@@ -13,9 +13,6 @@ public class SystemInfoMenu extends MenuBase {
             case 1:
                 SystemInfoController.changeKmPrice();
                 break;
-            case 3:
-                break;
-
         }
     }
 

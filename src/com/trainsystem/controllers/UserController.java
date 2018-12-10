@@ -2,6 +2,7 @@ package com.trainsystem.controllers;
 
 import com.trainsystem.models.User;
 import com.trainsystem.views.AdminView;
+import com.trainsystem.views.UserView;
 
 import java.util.Map;
 import java.util.Objects;
@@ -20,9 +21,13 @@ public class UserController {
             case 3: role = "admin"; break;
         }
 
-        new User(userData.get("username"), userData.get("password"), role).store();
-
-        AdminView.createUserSuccess();
+        if(User.whereUsername(userData.get("username")) != null)
+        {
+            AdminView.deleteUserFailed();
+        } else {
+            new User(userData.get("username"), userData.get("password"), role).store();
+            AdminView.createUserSuccess();
+        }
     }
 
 
@@ -38,6 +43,6 @@ public class UserController {
     }
 
     public static void showUsers() {
-        AdminView.showUsers(User.all());
+        UserView.showUsers(User.all());
     }
 }

@@ -12,6 +12,6 @@ public class SystemView {
     public static int changeKmPrice(SystemInfo systemInfo)
     {
         showKmPrice(systemInfo);
-        return MenuHelper.readInt("Új km/ár forintban meghatározva: ");
+        return MenuHelper.getInstance().readInt("Új km/ár forintban meghatározva: ");
     }
 }

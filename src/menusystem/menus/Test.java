@@ -2,6 +2,7 @@ package menusystem.menus;
 
 import menusystem.MenuBase;
 import menusystem.MenuController;
+import menusystem.MenuHelper;
 
 public class Test extends MenuBase {
 
@@ -10,7 +11,7 @@ public class Test extends MenuBase {
         switch (option)
         {
             case 1:
-                String name = this.helper.readLine("Varom az inputot: ");
+                String name = MenuHelper.getInstance().readLine("Varom az inputot: ");
                 break;
             case 2:
                 MenuController.create(new Test()).execute();

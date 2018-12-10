@@ -2,6 +2,7 @@ package com.trainsystem;
 
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
+import com.trainsystem.controllers.RouteController;
 import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
 import com.trainsystem.models.BaseModel;
@@ -34,6 +35,8 @@ public class Main {
         //systemInfo.store();
         //System.out.println(o);
 
+        RouteController.createTimeTable();
+        /*
 
 
         while(true) {

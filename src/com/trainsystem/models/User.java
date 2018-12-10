@@ -1,5 +1,7 @@
 package com.trainsystem.models;
 
+import com.jayway.jsonpath.Criteria;
+import com.jayway.jsonpath.Filter;
 import com.trainsystem.db.DbJsonObject;
 import com.trainsystem.db.Query;
 import org.json.simple.JSONArray;
@@ -40,6 +42,11 @@ public class User extends BaseModel {
         return users;
     }
     public static ArrayList<User> all() { return make(User.all("users").get()); }
+
+    public static User whereUsername(String username)
+    {
+        return make(User.where("users", Filter.filter(Criteria.where("username").is(username))).first());
+    }
 
     @Override
     protected Map<String, String> insert(int id) { return Map.of("id", String.valueOf(id), "username", username, "password", password, "role", role); }

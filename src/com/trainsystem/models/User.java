@@ -5,6 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class User extends BaseModel {
 
@@ -44,6 +45,16 @@ public class User extends BaseModel {
                 '}';
     }
 
+    @Override
+    protected Map<String, String> insert(int id) {
+        return Map.of("id", String.valueOf(id), "username", username, "password", password, "role", role);
+    }
+
+    @Override
+    protected Map<String, String> save() {
+        return null;
+    }
+
     public int getId() {
         return id;
     }
@@ -59,4 +70,5 @@ public class User extends BaseModel {
     public boolean isUser() { return getRole().equals("user"); }
     public boolean isWorker() { return getRole().equals("worker"); }
     public boolean isAdmin() { return getRole().equals("admin"); }
+
 }

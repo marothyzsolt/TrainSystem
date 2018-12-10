@@ -5,12 +5,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Route extends BaseModel {
 
     private int id;
     private String from;
     private String to;
+    private int distance;
     private ArrayList<Time> times;
 
 
@@ -18,7 +20,7 @@ public class Route extends BaseModel {
         id = ((Long)jsonObject.get("id")).intValue();
         from = (String) jsonObject.get("from");
         to = (String) jsonObject.get("to");
-
+        distance = (int) jsonObject.get("distance");
         times = (Time.make((JSONArray) jsonObject.get("times")));
     }
 
@@ -43,5 +45,13 @@ public class Route extends BaseModel {
                 ", to='" + to + '\'' +
                 ", times=" + times +
                 '}';
+    }
+
+    @Override
+    protected Map<String, String> insert(int id) { return Map.of("id", String.valueOf(id), "from", from, "to", to, "distance", String.valueOf(distance)); }
+
+    @Override
+    protected Map<String, String> save() {
+        return null;
     }
 }

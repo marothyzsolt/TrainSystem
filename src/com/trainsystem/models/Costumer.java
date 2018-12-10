@@ -65,4 +65,8 @@ public class Costumer extends User {
     public void addPurchase(Purchase purchase) {
         purchases.add(purchase);
     }
+
+    public void store() {
+        store("users");
+    }
 }

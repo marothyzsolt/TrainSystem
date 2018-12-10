@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b567429-048c-4bc3-b0db-cd22fe60f744" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/TrainSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TrainSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/com/trainsystem/models/Route.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/com/trainsystem/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/controllers/CostumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/controllers/CostumerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/db/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/db/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/trainsystem/db/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/db/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/models/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/models/Costumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/models/Costumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/models/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/models/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/trainsystem/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/trainsystem/services/StorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/trainsystem/services/StorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menusystem/menus/UserMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menusystem/menus/UserMainMenu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,39 +32,40 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="94" />
-          <entry key="json" value="8" />
+          <entry key="java" value="100" />
+          <entry key="json" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="94" />
-          <entry key="JSON" value="8" />
+          <entry key="JAVA" value="100" />
+          <entry key="JSON" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8580" />
-          <entry key="json" value="320" />
+          <entry key="java" value="8662" />
+          <entry key="json" value="456" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8580" />
-          <entry key="JSON" value="320" />
+          <entry key="JAVA" value="8662" />
+          <entry key="JSON" value="456" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/trainsystem/controllers/CostumerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="289">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1088#1089#0" expanded="true" />
                 <element signature="e#1161#1162#0" expanded="true" />
                 <element signature="e#1580#1581#0" expanded="true" />
                 <element signature="e#1648#1649#0" expanded="true" />
@@ -71,63 +75,29 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/views/PurchasesView.java">
+        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+            <state relative-caret-position="290">
+              <caret line="49" column="106" selection-start-line="49" selection-start-column="106" selection-end-line="49" selection-end-column="106" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2462#2463#0" expanded="true" />
-                <element signature="e#2535#2536#0" expanded="true" />
-                <element signature="e#2575#2576#0" expanded="true" />
-                <element signature="e#2630#2631#0" expanded="true" />
+                <element signature="e#1444#1445#0" expanded="true" />
+                <element signature="e#1471#1472#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/menusystem/menus/UserMainMenu.java">
+        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Costumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="340">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Time.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/views/SearchView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#952#953#0" expanded="true" />
-                <element signature="e#973#974#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="26" column="143" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="143" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#Costumer#0;class#Costumer#0" />
+                <element signature="method#removeCreditCard#0;class#Costumer#0" />
+                <element signature="e#2248#2249#0" expanded="true" />
+                <element signature="e#2278#2279#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,17 +106,108 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/BaseModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="191">
+              <caret line="157" column="53" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#612#613#0" expanded="true" />
+                <element signature="e#670#671#0" expanded="true" />
+                <element signature="e#728#729#0" expanded="true" />
+                <element signature="e#804#805#0" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+                <element signature="e#931#932#0" expanded="true" />
+                <element signature="e#997#998#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#3066#3096#0" expanded="true" />
+                <element signature="e#4514#4515#0" expanded="true" />
+                <element signature="e#4554#4555#0" expanded="true" />
+                <element signature="e#4936#4937#0" expanded="true" />
+                <element signature="e#4961#4962#0" expanded="true" />
+                <element signature="e#4968#4998#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Route.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#1417#1418#0" expanded="true" />
+                <element signature="e#1444#1445#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/DatabaseConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+              <folding>
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#951#952#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/helpers/JsonHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/DbJsonObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1428">
+              <caret line="84" column="1" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#302#303#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
+                <element signature="e#638#639#0" expanded="true" />
+                <element signature="e#2080#2081#0" expanded="true" />
+                <element signature="e#2131#2132#0" expanded="true" />
+                <element signature="e#2195#2196#0" expanded="true" />
+                <element signature="e#2259#2260#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/db.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-931">
-              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+            <state>
+              <caret column="1574" selection-start-column="1570" selection-end-column="1574" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/production/TrainSystem/com/trainsystem/db/db.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="95" column="38" lean-forward="true" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+              <folding>
+                <element signature="e#135#277#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,6 +224,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>where</find>
+      <find>store</find>
+      <find>cred</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,20 +238,25 @@
         <option value="$PROJECT_DIR$/src/menusystem/menus/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/menusystem/menus/CostumerCardEditorMenu.java" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/services/StorageService.java" />
-        <option value="$PROJECT_DIR$/src/com/trainsystem/models/User.java" />
         <option value="$PROJECT_DIR$/out/production/TrainSystem/com/trainsystem/db/db.json" />
         <option value="$PROJECT_DIR$/src/menusystem/menus/CostumerPurchaseMenu.java" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/menusystem/menus/UserMainMenu.java" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/models/CreditCard.java" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/views/CreditCardView.java" />
-        <option value="$PROJECT_DIR$/src/com/trainsystem/db/db.json" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/models/Purchase.java" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/models/Lease.java" />
-        <option value="$PROJECT_DIR$/src/com/trainsystem/models/Costumer.java" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/views/SearchView.java" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/views/PurchasesView.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/models/BaseModel.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/db/DbJsonObject.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/helpers/JsonHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/db/DatabaseConnection.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/db/db.json" />
         <option value="$PROJECT_DIR$/src/com/trainsystem/controllers/CostumerController.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/models/Costumer.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/models/User.java" />
+        <option value="$PROJECT_DIR$/src/com/trainsystem/models/Route.java" />
       </list>
     </option>
   </component>
@@ -250,7 +318,7 @@
               <item name="TrainSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="trainsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TrainSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -279,7 +347,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544431934951" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544434825938" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -338,12 +406,12 @@
       <option name="presentableId" value="Default" />
       <updated>1544367729938</updated>
       <workItem from="1544367732891" duration="1728000" />
-      <workItem from="1544370296241" duration="19667000" />
+      <workItem from="1544370296241" duration="22201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21395000" />
+    <option name="totallyTimeSpent" value="23929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -358,7 +426,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -379,7 +447,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -388,7 +456,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -532,24 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/TrainSystem/com/trainsystem/db/db.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="99" column="5" lean-forward="true" selection-end-line="113" selection-end-column="1" />
-          <folding>
-            <element signature="e#135#277#0" />
-            <element signature="e#298#612#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Route.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Lease.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -581,38 +631,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Costumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Costumer#0;class#Costumer#0" />
-            <element signature="method#removeCreditCard#0;class#Costumer#0" />
-            <element signature="e#1968#1969#0" expanded="true" />
-            <element signature="e#2002#2003#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#2083#2084#0" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
-            <element signature="e#2212#2213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/DatabaseConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
         </state>
       </provider>
     </entry>
@@ -655,20 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/db.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-931">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/BaseModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trainsystem/views/PurchasesView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -683,16 +687,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/controllers/CostumerController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/DbJsonObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="1428">
+          <caret line="84" column="1" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
+            <element signature="e#2131#2132#0" expanded="true" />
+            <element signature="e#2195#2196#0" expanded="true" />
+            <element signature="e#2259#2260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/helpers/JsonHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/controllers/CostumerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
             <element signature="e#1161#1162#0" expanded="true" />
             <element signature="e#1580#1581#0" expanded="true" />
             <element signature="e#1648#1649#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="49" column="106" selection-start-line="49" selection-start-column="106" selection-end-line="49" selection-end-column="106" />
+          <folding>
+            <element signature="e#1444#1445#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Costumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Costumer#0;class#Costumer#0" />
+            <element signature="method#removeCreditCard#0;class#Costumer#0" />
+            <element signature="e#2248#2249#0" expanded="true" />
+            <element signature="e#2278#2279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/DatabaseConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+          <folding>
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/BaseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="157" column="53" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#3066#3096#0" expanded="true" />
+            <element signature="e#4514#4515#0" expanded="true" />
+            <element signature="e#4554#4555#0" expanded="true" />
+            <element signature="e#4936#4937#0" expanded="true" />
+            <element signature="e#4961#4962#0" expanded="true" />
+            <element signature="e#4968#4998#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/models/Route.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#1417#1418#0" expanded="true" />
+            <element signature="e#1444#1445#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/TrainSystem/com/trainsystem/db/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="95" column="38" lean-forward="true" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+          <folding>
+            <element signature="e#135#277#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trainsystem/db/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1574" selection-start-column="1570" selection-end-column="1574" />
         </state>
       </provider>
     </entry>

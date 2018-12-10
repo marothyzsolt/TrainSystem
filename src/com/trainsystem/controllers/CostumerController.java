@@ -25,6 +25,7 @@ public class CostumerController {
     public void addCreditCard() {
         CreditCard creditCard = CreditCardView.getCard();
         costumer.addCreditCard(creditCard);
+        costumer.store();
     }
 
     public void removeCreditCard() {

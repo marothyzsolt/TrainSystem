@@ -3,33 +3,36 @@ package menusystem;
 import java.util.Scanner;
 
 public class MenuHelper {
-    private static Scanner input;
+    private Scanner input;
+    private static MenuHelper instance;
 
-    static {
+    public static MenuHelper getInstance() {
+        if(instance == null)
+            instance = new MenuHelper();
+        return instance;
+    }
+
+    private MenuHelper() {
         input = new Scanner(System.in);
     }
 
-    public MenuHelper() {
-        input = new Scanner(System.in);
-    }
-
-    public static String readLine()
+    public String readLine()
     {
-        return input.nextLine();
+        return new Scanner(System.in).nextLine();
     }
 
-    public static int readInt()
+    public int readInt()
     {
-        return input.nextInt();
+        return new Scanner(System.in).nextInt();
     }
 
-    public static String readLine(String out)
+    public String readLine(String out)
     {
         System.out.print(out);
         return readLine();
     }
 
-    public static int readInt(String out )
+    public int readInt(String out )
     {
         System.out.print(out);
         return readInt();

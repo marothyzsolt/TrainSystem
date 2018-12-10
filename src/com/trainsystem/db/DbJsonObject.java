@@ -82,4 +82,10 @@ public class DbJsonObject {
     {
         return new DbJsonObject((JSONObject) jsonObject);
     }
+
+    @Override
+    public String toString() {
+        return jsonObject.toString();
+    }
 }
+

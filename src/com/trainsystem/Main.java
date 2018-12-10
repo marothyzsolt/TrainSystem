@@ -1,13 +1,13 @@
 package com.trainsystem;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
+import com.trainsystem.controllers.RouteController;
 import com.trainsystem.db.DatabaseConnection;
 import com.trainsystem.db.Query;
 import com.trainsystem.models.BaseModel;
 import com.trainsystem.models.Route;
+import com.trainsystem.models.SystemInfo;
 import com.trainsystem.models.User;
 import com.trainsystem.services.StorageService;
 import menusystem.MenuController;
@@ -23,11 +23,21 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-        //Route r = Route.make(Route.find("routes", 0).first());
+        //Route r = Route.make(Route.find("routes", 1).first());
         //System.out.println(r);
 
+        ///User u = User.make(User.find("users", 4).first());
+       // u.delete("users", 4);
+      //  System.out.println(u);
+
+        //SystemInfo systemInfo = SystemInfo.getInstance();
+        //systemInfo.setKmPrice(10);
+        //systemInfo.store();
+        //System.out.println(o);
 
 
+        //RouteController.createTimeTable();
+        
 
         while(true) {
             if(StorageService.getInstance().user() == null)
@@ -60,7 +70,16 @@ public class Main {
 
         /**  Szimpla lekrédezés egy soros **/
         //User user = User.make(BaseModel.where("users", "username", "user")).get(0);
+        //User user2 = User.make(BaseModel.where("users", "username", "wapor")).get(0);
+
+        /** USER létrehozás */
+        //User user = new User("wapor", "asd123", "admin");
+        //user.store();
+
+        /** USER TÖRLÉS */ // 4-es az id (nem a sorszám, hanem az id a users táblában a json fájlban!!!!
+        //BaseModel.delete("users", 4);
 
         //System.out.println(user);
+        //System.out.println(user2);
     }
 }

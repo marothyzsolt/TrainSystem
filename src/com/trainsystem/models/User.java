@@ -1,5 +1,8 @@
 package com.trainsystem.models;
 
+import com.jayway.jsonpath.Criteria;
+import com.jayway.jsonpath.Filter;
+import com.trainsystem.db.DbJsonObject;
 import com.trainsystem.db.Query;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -9,31 +12,49 @@ import java.util.Map;
 
 public class User extends BaseModel {
 
-    private int id;
     private String username;
     private String password;
     private String role;
 
 
-    public User(JSONObject jsonObject) {
-        id = ((Long)jsonObject.get("id")).intValue();
-        username = (String) jsonObject.get("username");
-        password = (String) jsonObject.get("password");
-        role = (String) jsonObject.get("role");
+    public User(DbJsonObject dbJsonObject)
+    {
+        id = dbJsonObject.getInt("id");
+        username = dbJsonObject.getString("username");
+        password = dbJsonObject.getString("password");
+        role = dbJsonObject.getString("role");
     }
 
-    public static User make(JSONObject jsonObject) { return jsonObject == null ? null : new User(jsonObject); }
+    public User(String username, String password, String role)
+    {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
+
+    public static User make(JSONObject jsonObject) { return jsonObject==null?null:new User(DbJsonObject.create(jsonObject)); }
+    public static ArrayList<User> make(Query query) { return make(query.all()); }
+
     public static ArrayList<User> make(JSONArray jsonArray)
     {
         ArrayList<User> users = new ArrayList<>();
-        jsonArray.forEach(item-> users.add(new User((JSONObject) item)));
+        jsonArray.forEach(item-> users.add(new User(new DbJsonObject((JSONObject) item))));
 
         return users;
     }
-    public static ArrayList<User> make(Query query)
+    public static ArrayList<User> all() { return make(User.all("users").get()); }
+
+    public static User whereUsername(String username)
     {
-        return make(query.all());
+        return make(User.where("users", Filter.filter(Criteria.where("username").is(username))).first());
     }
+
+    @Override
+    protected Map<String, String> insert(int id) { return Map.of("id", String.valueOf(id), "username", username, "password", password, "role", role); }
+    @Override
+    protected Map<String, String> save() { return null; }
+    public void store() { store("users"); }
 
     @Override
     public String toString() {
@@ -44,6 +65,7 @@ public class User extends BaseModel {
                 ", role='" + role + '\'' +
                 '}';
     }
+
 
     @Override
     protected Map<String, String> insert(int id) {
@@ -65,6 +87,12 @@ public class User extends BaseModel {
 
     public String getRole() {
         return role.toLowerCase();
+    }
+
+    public void delete()
+    {
+        if(id > 0)
+            delete("users", id);
     }
 
     public boolean isUser() { return getRole().equals("user"); }

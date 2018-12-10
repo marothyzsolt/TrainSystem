@@ -21,6 +21,7 @@ public class DatabaseConnection {
         JSONParser parser = new JSONParser();
 
         try {
+            System.out.println(filePath);
             database = (JSONObject) parser.parse( new FileReader(filePath));
         } catch (Exception e) {
             e.printStackTrace();

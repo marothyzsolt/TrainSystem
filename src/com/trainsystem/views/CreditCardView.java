@@ -10,16 +10,16 @@ import java.util.Iterator;
 public class CreditCardView {
 
     public static CreditCard getCard() {
-        Long cardNumber = Long.parseLong(MenuHelper.readLine("Kártyaszám: "));
-        String expiry = MenuHelper.readLine("Lejárat: ");
-        Long CCN = Long.parseLong(MenuHelper.readLine("CCN: "));
-        String type = MenuHelper.readLine("Típus: ");
+        Long cardNumber = Long.parseLong(MenuHelper.getInstance().readLine("Kártyaszám: "));
+        String expiry = MenuHelper.getInstance().readLine("Lejárat: ");
+        Long CCN = Long.parseLong(MenuHelper.getInstance().readLine("CCN: "));
+        String type = MenuHelper.getInstance().readLine("Típus: ");
         CreditCard creditCard = new CreditCard(cardNumber, expiry, CCN, type);
         return creditCard;
     }
 
     public static Long getCreditCardNumber() {
-        Long cardNumber = Long.parseLong(MenuHelper.readLine("Kártyaszám: "));
+        Long cardNumber = Long.parseLong(MenuHelper.getInstance().readLine("Kártyaszám: "));
         return cardNumber;
     }
 

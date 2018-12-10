@@ -1,5 +1,6 @@
 package com.trainsystem.models;
 
+import com.trainsystem.db.DbJsonObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -11,7 +12,7 @@ public class Costumer extends User {
     private ArrayList<CreditCard> creditCards;
     private ArrayList<Purchase> purchases;
 
-    public Costumer(JSONObject jsonObject) {
+    public Costumer(DbJsonObject jsonObject) {
         super(jsonObject);
         user = new User(jsonObject);
         if (jsonObject.get("creditCards") != null) {

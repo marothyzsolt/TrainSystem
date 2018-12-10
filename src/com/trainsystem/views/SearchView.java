@@ -9,8 +9,8 @@ import java.util.Iterator;
 
 public class SearchView {
     public static Pair<String, String> getRoute() {
-        String from = MenuHelper.readLine("Honnan: ");
-        String to = MenuHelper.readLine("Hova: ");
+        String from = MenuHelper.getInstance().readLine("Honnan: ");
+        String to = MenuHelper.getInstance().readLine("Hova: ");
         Pair<String, String> pair = new Pair<>(from, to);
         return pair;
     }

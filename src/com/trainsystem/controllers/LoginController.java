@@ -2,6 +2,7 @@ package com.trainsystem.controllers;
 
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
+import com.trainsystem.db.DbJsonObject;
 import com.trainsystem.helpers.Pair;
 import com.trainsystem.models.Costumer;
 import com.trainsystem.models.User;
@@ -27,7 +28,7 @@ public class LoginController {
         JSONObject userObject = User.where("users",Filter.filter(Criteria.where("username").is(username).and("password").is(password))).first();
         if(userObject != null) {
             if ( userObject.get("role").equals("user")) {
-                Costumer costumer = new Costumer(userObject);
+                Costumer costumer = new Costumer(DbJsonObject.create(userObject));
                 StorageService.getInstance().setCurrentCostumer(costumer);
             }
             User user = User.make(userObject);

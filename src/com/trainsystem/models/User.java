@@ -66,21 +66,6 @@ public class User extends BaseModel {
                 '}';
     }
 
-
-    @Override
-    protected Map<String, String> insert(int id) {
-        return Map.of("id", String.valueOf(id), "username", username, "password", password, "role", role);
-    }
-
-    @Override
-    protected Map<String, String> save() {
-        return null;
-    }
-
-    public int getId() {
-        return id;
-    }
-
     public String getUsername() {
         return username;
     }

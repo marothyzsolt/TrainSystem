@@ -52,8 +52,8 @@ public class PurchasesView {
                 i++;
             }
 
-            int numberOfLease = Integer.parseInt(MenuHelper.readLine("Bérlet száma: "));
-            int numberOfCard = Integer.parseInt(MenuHelper.readLine(("Bankkártya sorszáma: ")));
+            int numberOfLease = Integer.parseInt(MenuHelper.getInstance().readLine("Bérlet száma: "));
+            int numberOfCard = Integer.parseInt(MenuHelper.getInstance().readLine(("Bankkártya sorszáma: ")));
             Pair<Lease, CreditCard> pair = new Pair<>(leases.get(numberOfLease), creditCards.get(numberOfCard));
             return pair;
         } else {

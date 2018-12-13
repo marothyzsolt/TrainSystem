@@ -7,6 +7,7 @@ import com.trainsystem.models.Time;
 import com.trainsystem.models.User;
 import menusystem.MenuHelper;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -38,8 +39,13 @@ public class RouteView {
     public void showTimeTable()
     {
         for (Time time : model.getTimes()) {
-            System.out.println("\t " + time.getStartFormat() + " - " + time.getArriveFormat());
+            System.out.println("\t [" + time.getId() + "]: " + time.getStartFormat() + " - " + time.getArriveFormat());
         }
+    }
+
+    public int getTimeTableId()
+    {
+        return MenuHelper.getInstance().readInt("ID: ");
     }
 
     public static Map<String, String> createRoute()

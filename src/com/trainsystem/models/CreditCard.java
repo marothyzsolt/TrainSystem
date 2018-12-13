@@ -1,25 +1,29 @@
 package com.trainsystem.models;
 
+import com.trainsystem.db.DbJsonObject;
 import org.json.simple.JSONObject;
 
-public class CreditCard {
-    private Long CCN;
-    private Long cardNumber;
+import java.util.Map;
+
+public class CreditCard extends BaseModel {
+    private int CCN;
+    private int cardNumber;
     private String expiry;
     private String type;
 
-    public CreditCard( Long cardNumber, String expiry, Long CCN, String type) {
+    public CreditCard( int cardNumber, String expiry, int CCN, String type) {
         this.CCN = CCN;
         this.cardNumber = cardNumber;
         this.expiry = expiry;
         this.type = type;
     }
 
-    public CreditCard(JSONObject card) {
-        this.CCN = (Long) card.get("CCN");
-        this.cardNumber = (Long) card.get("cardNumber");
-        this.expiry = (String) card.get("expiry");
-        this.type = (String) card.get("type");
+    public CreditCard(DbJsonObject card) {
+        this.id = card.getInt("id");
+        this.CCN = card.getInt("CCN");
+        this.cardNumber = card.getInt("cardNumber");
+        this.expiry = card.getString("expiry");
+        this.type = card.getString("type");
     }
 
     public String getType() {
@@ -38,19 +42,19 @@ public class CreditCard {
         this.expiry = expiry;
     }
 
-    public Long getCardNumber() {
+    public int getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(Long cardNumber) {
+    public void setCardNumber(int cardNumber) {
         this.cardNumber = cardNumber;
     }
 
-    public Long getCCN() {
+    public int getCCN() {
         return CCN;
     }
 
-    public void setCCN(Long CCN) {
+    public void setCCN(int CCN) {
         this.CCN = CCN;
     }
 
@@ -59,5 +63,15 @@ public class CreditCard {
         System.out.println("Lejárat: " + expiry);
         System.out.println("CCN: " + CCN);
         System.out.println("Típus: " + type);
+    }
+
+    @Override
+    protected Map<String, String> insert(int id) {
+        return null;
+    }
+
+    @Override
+    protected Map<String, String> save() {
+        return null;
     }
 }

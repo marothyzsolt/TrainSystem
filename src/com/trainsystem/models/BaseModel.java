@@ -175,6 +175,11 @@ abstract public class BaseModel {
 
     protected int getNextId(JSONArray jsonArray)
     {
+        //System.out.println(jsonArray);
+        if(jsonArray.size() == 0)
+            return 1;
+        if(jsonArray.size() == 1 && jsonArray.get(0).equals(""))
+            return 1;
         int maxid = 0;
         for (Object jsonObject : jsonArray)
             if (jsonObject != null && (id = Integer.parseInt(String.valueOf(((JSONObject) jsonObject).get("id")))) > maxid)

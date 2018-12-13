@@ -13,9 +13,9 @@
           "id":2
         },
         {
-          "arrive":"2019-01-01 11:10",
+          "start":"2018-01-01 00:00",
           "id":"3",
-          "start":"2019-01-01 10:00"
+          "arrive":"2018-01-01 00:01"
         }
       ],
       "distance":230,
@@ -42,11 +42,6 @@
           "arrive":"2018-11-10 16:50",
           "start":"2018-11-10 15:46",
           "id":1
-        },
-        {
-          "arrive":"2018-01-01 01:00",
-          "start":"2018-01-01 00:00",
-          "id":"2"
         }
       ],
       "distance":180,
@@ -60,26 +55,94 @@
           "arrive":"2018-11-05 14:50",
           "start":"2018-11-05 13:10",
           "id":1
-        },
-        {
-          "arrive":"2018-01-01 06:00",
-          "start":"2018-01-01 00:00",
-          "id":"2"
         }
       ],
       "distance":100,
       "from":"Gyor",
       "id":4,
       "to":"Szombathely"
+    },
+    {
+      "times":[
+        {
+          "arrive":"2018-11-05 14:50",
+          "start":"2018-11-05 13:10",
+          "id":1
+        }
+      ],
+      "distance":100,
+      "from":"Gyor",
+      "id":5,
+      "to":"Pecs"
+    },
+    {
+      "times":"",
+      "distance":"320",
+      "from":"Budapest",
+      "id":"6",
+      "to":"Debrecen"
+    }
+  ],
+  "leases":[
+    {
+      "price":1000,
+      "from":"2018\/12\/00",
+      "to":"2018\/12\/15",
+      "id":1
+    },
+    {
+      "price":2000,
+      "from":"2018\/12\/00",
+      "to":"2018\/12\/31",
+      "id":2
+    },
+    {
+      "price":1000,
+      "from":"2018\/12\/15",
+      "to":"2018\/12\/31",
+      "id":2
     }
   ],
   "system":{
-    "km_price":13
+    "km_price":"30"
   },
   "users":[
     {
       "password":"testpass",
       "role":"user",
+      "creditCards":[
+        {
+          "id":1,
+          "expiry":"20\/20",
+          "type":"MasterCard",
+          "cardNumber":12345,
+          "CCN":123
+        },
+        {
+          "id":"2",
+          "expiry":"20\/21",
+          "type":"Visa",
+          "cardNumber":"123"
+        }
+      ],
+      "purchases":[
+        {
+          "lease":{
+            "price":1000,
+            "from":"2018\/12\/15",
+            "id":1,
+            "to":"2018\/12\/31"
+          },
+          "creditCard":{
+            "id":1,
+            "expiry":"20\/20",
+            "type":"MasterCard",
+            "cardNumber":12345,
+            "CCN":123
+          },
+          "Date":"2018\/12\/14"
+        }
+      ],
       "id":1,
       "username":"user"
     },

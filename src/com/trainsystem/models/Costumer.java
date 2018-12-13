@@ -1,11 +1,14 @@
 package com.trainsystem.models;
 
+import com.trainsystem.db.DatabaseConnection;
+import com.trainsystem.db.DbJsonArray;
 import com.trainsystem.db.DbJsonObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
 
 public class Costumer extends User {
     private User user;
@@ -19,7 +22,7 @@ public class Costumer extends User {
             ArrayList<CreditCard> cards = new ArrayList<>();
             JSONArray jsonCards = (JSONArray) jsonObject.get("creditCards");
             for ( int i = 0; i < jsonCards.size(); i++) {
-                CreditCard card = new CreditCard((JSONObject) jsonCards.get(i));
+                CreditCard card = new CreditCard(DbJsonObject.create(jsonCards.get(i)));
                 cards.add(card);
             }
             creditCards = cards;
@@ -39,9 +42,16 @@ public class Costumer extends User {
         }
     }
 
-    public void addCreditCard( CreditCard cardNumber) {
-        creditCards.add( cardNumber);
+    public void addCreditCard(CreditCard cardNumber) {
+        creditCards.add(cardNumber);
+        DbJsonArray x = findData("users["+id+"].creditCards", DatabaseConnection.getInstance().getDatabase());
+
+        Map<String, String> map = Map.of("id", String.valueOf(getNextId(x.get())),"cardNumber", String.valueOf(cardNumber.getCardNumber()), "expiry", cardNumber.getExpiry(), "type", cardNumber.getType());
+        insertData(Map.of("id", String.valueOf(getNextId(x.get())),"cardNumber", String.valueOf(cardNumber.getCardNumber()), "expiry", cardNumber.getExpiry(), "type", cardNumber.getType()), x);
+
+        DatabaseConnection.getInstance().saveDatabase();
     }
+
 
     public void removeCreditCard( Long cardNumber) {
         ArrayList<CreditCard> tempCards = new ArrayList<>();

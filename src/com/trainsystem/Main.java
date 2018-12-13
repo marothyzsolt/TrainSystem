@@ -39,7 +39,9 @@ public class Main {
 
 
         //RouteController.createTimeTable();
-        
+
+        //RouteController.deleteTimeTable();
+
 
         while(true) {
             if(StorageService.getInstance().user() == null)

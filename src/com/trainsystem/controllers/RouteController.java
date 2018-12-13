@@ -66,4 +66,20 @@ public class RouteController {
 
         } else RouteView.noRouteExistsError();
     }
+
+    public static void deleteRoute() {
+
+    }
+
+    public static void deleteTimeTable() {
+        listRoutes();
+        RouteController routeController = selectRoute();
+        if(routeController != null)
+        {
+            routeController.view.showRoute();
+            routeController.view.showTimeTable();
+            int timeId = routeController.view.getTimeTableId();
+            routeController.model.getTime(timeId);
+        } else RouteView.noRouteExistsError();
+    }
 }

@@ -26,7 +26,10 @@ public class Route extends BaseModel {
         to = jsonObject.getString("to");
         distance = jsonObject.getInt("distance");
 
-        if(jsonObject.getArray("times") != null)
+        if(jsonObject.get("times") instanceof String)
+        {
+          times = new ArrayList<>();
+        } else if(jsonObject.getArray("times") != null)
             times = (Time.make(jsonObject.getArray("times")));
     }
 
@@ -69,7 +72,15 @@ public class Route extends BaseModel {
     }
 
     @Override
-    protected Map<String, String> insert(int id) { return Map.of("id", String.valueOf(id), "from", from, "to", to, "distance", String.valueOf(distance)); }
+    protected Map<String, String> insert(int id)
+    {
+        return Map.of(
+                "id", String.valueOf(id),
+                "from", from,
+                "to", to, "distance", String.valueOf(distance),
+                "times", ""
+        );
+    }
 
     @Override
     protected Map<String, String> save() {
@@ -107,8 +118,19 @@ public class Route extends BaseModel {
 
         DbJsonArray x = findData("routes["+id+"].times", DatabaseConnection.getInstance().getDatabase());
 
+        //Map<String, String> datas = Map.of("id", String.valueOf(getNextId(x.get())),"start", time.getStartBaseFormat(), "arrive", time.getArriveBaseFormat());
         insertData(Map.of("id", String.valueOf(getNextId(x.get())),"start", time.getStartBaseFormat(), "arrive", time.getArriveBaseFormat()), x);
+       // JSONObject jsonObject = new JSONObject();
+        //datas.forEach(jsonObject::put);
+        //database.get().add(datas);
+
 
         DatabaseConnection.getInstance().saveDatabase();
+    }
+
+    public void getTime(int id)
+    {
+        DbJsonArray x = findData("routes["+id+"].times", DatabaseConnection.getInstance().getDatabase());
+        System.out.println(x);
     }
 }

@@ -1,5 +1,6 @@
 package menusystem.menus;
 
+import com.trainsystem.controllers.RouteController;
 import menusystem.MenuBase;
 
 public class WorkerMainMenu extends MenuBase {
@@ -9,7 +10,7 @@ public class WorkerMainMenu extends MenuBase {
         switch (option)
         {
             case 1:
-
+                RouteController.createRoute();
                 break;
             case 2:
                 System.exit(0);
@@ -20,7 +21,7 @@ public class WorkerMainMenu extends MenuBase {
 
     @Override
     public String[] getOptions() {
-        return new String[]{"Kijelentkezés", "Kilépés"};
+        return new String[]{"Indulás-érkezés hozzáadása", "Kijelentkezés", "Kilépés"};
     }
 
 

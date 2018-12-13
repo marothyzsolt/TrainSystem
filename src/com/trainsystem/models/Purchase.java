@@ -1,5 +1,6 @@
 package com.trainsystem.models;
 
+import com.trainsystem.db.DbJsonObject;
 import org.json.simple.JSONObject;
 
 import java.util.Date;
@@ -25,7 +26,7 @@ public class Purchase {
         JSONObject jsonLease = (JSONObject) purchase.get("lease");
         Lease lease = new Lease(jsonLease);
         JSONObject jsonCard = (JSONObject) purchase.get("creditCard");
-        CreditCard creditCard = new CreditCard(jsonCard);
+        CreditCard creditCard = new CreditCard(DbJsonObject.create(jsonCard));
         this.lease = lease;
         this.creditCard = creditCard;
         this.timestamp = new Date();
